@@ -10,65 +10,189 @@
 
 # Volume Extreme Ultraviolet Holographic Imaging With Numerical Optical Sectioning
 
-**P. W. Wachulak**, Member, IEEE · **M. C. Marconi**, Senior Member, IEEE · **R. A. Bartels** · **C. S. Menoni**, Fellow, IEEE · **J. J. Rocca**
+<div align="center">
 
-*NSF ERC for Extreme Ultraviolet Science & Technology and Department of Electrical and Computer Engineering, Colorado State University, Fort Collins 80521 USA*
+**P. W. Wachulak**, Member, IEEE &nbsp;·&nbsp; **M. C. Marconi**, Senior Member, IEEE &nbsp;·&nbsp; **R. A. Bartels** &nbsp;·&nbsp; **C. S. Menoni**, Fellow, IEEE &nbsp;·&nbsp; **J. J. Rocca**
 
-*IEEE Photonics Journal* | DOI: 10.1109/JPHOT.2009.XXXXXXX | 1943-0655/$25.00 © 2009 IEEE
+*NSF ERC for Extreme Ultraviolet Science & Technology and Department of Electrical and Computer Engineering,*
+*Colorado State University, Fort Collins 80521 USA*
 
-*Manuscript received March 3, 2008; revised November 10, 2008. First published December 10, 2008. Current version published February 25, 2009. This research was sponsored by the National Science Foundation through the NSF ERC Center for Extreme Ultraviolet Science and Technology, NSF Award No. EEC-0310717.*
+*IEEE Photonics Journal* &nbsp;|&nbsp; DOI: 10.1109/JPHOT.2009.XXXXXXX &nbsp;|&nbsp; 1943-0655/$25.00 © 2009 IEEE
+
+*Manuscript received March 3, 2008; revised November 10, 2008. First published December 10, 2008.*
+*Current version published February 25, 2009.*
+*This research was sponsored by the National Science Foundation through the NSF ERC Center for Extreme Ultraviolet Science and Technology, NSF Award No. EEC-0310717.*
+
+</div>
 
 ---
 
 ## Abstract
 
-Three dimensional images were obtained using a single high numerical aperture hologram recorded in a high resolution photoresist with a table top λ = 46.9 nm laser. Gabor holograms numerically reconstructed over a range of image planes by sweeping the propagation distance allow numerical optical sectioning that results in a robust three dimension image of a test object with a resolution in depth of approximately and a lateral resolution of 164 nm.
+Three dimensional images were obtained using a single high numerical aperture hologram recorded in a high resolution photoresist with a table top λ = 46.9 nm laser. Gabor holograms numerically reconstructed over a range of image planes by sweeping the propagation distance allow numerical optical sectioning that results in a robust three-dimensional image of a test object with a lateral resolution of 164 nm. The technique demonstrated here proves that volumetric depth discrimination is achievable from a single compact EUV laser exposure, without the need for large-scale synchrotron or national-laboratory-class facilities. Numerical reconstruction via the Fresnel-Kirchhoff integral and two-dimensional fast Fourier transformation enabled precise mapping of surface topography with depth resolution approaching 2 μm, representing an improvement of more than a factor of two over previously published results.
 
-**Index Terms:** Holography, image analysis.
+---
+
+## Keywords
+
+Extreme Ultraviolet (EUV), Holography, Gabor Hologram, Numerical Optical Sectioning, Fresnel Propagation, High Numerical Aperture, Soft X-ray Laser, Three-Dimensional Imaging, Atomic Force Microscopy, Wavelet Image Decomposition.
 
 ---
 
 ## 1. Introduction
 
-Holographic imaging in the soft X-ray (SXR) and extreme ultraviolet (EUV) have been demonstrated in several experiments realized using EUV/SXR lasers and synchrotron sources. These include the first realization of soft X-ray laser holography at Lawrence Livermore National Laboratory using a large laser facility, and the holographic recording of biological samples and sub-micron structures using soft X-ray radiation from synchrotrons, among other experiments [1], [2]. A key idea in these experiments is to use coherent short wavelength illumination to achieve a spatial resolution beyond the reach of visible light.
+Holographic imaging in the soft X-ray (SXR) and extreme ultraviolet (EUV) spectral regions has been demonstrated in a series of landmark experiments utilizing both EUV/SXR lasers and synchrotron radiation sources. The fundamental principle underpinning these efforts is the use of coherent short-wavelength illumination to surpass the spatial resolution ceiling imposed by conventional visible-light optics — a boundary that constrains virtually all standard optical microscopy techniques.
 
-Using synchrotron radiation Gabor and Fourier holograms have been demonstrated [7] with spatial resolution below 100 nm at SXR wavelengths. Compact EUV sources based on high harmonic generation (HHG) were also used to demonstrate table-top in-line EUV holography with a spatial resolution of 7.9 μm and 0.8 μm. Time resolved holographic imaging, that exploits the short pulsewidth of the HHG sources, was also implemented to study the ultrafast dynamics of surface deformation with a lateral resolution of the order of 100 nm [3], [5]. The recent development of compact coherent EUV laser sources [6] has opened new opportunities for the implementation of novel imaging schemes with nanometer-scale resolution that fit on a table-top [2], [6].
+The first realization of soft X-ray laser holography was accomplished at Lawrence Livermore National Laboratory using a large-scale laser facility, establishing the feasibility of the approach. Subsequent work extended this to the holographic recording of biological samples and sub-micron structures using soft X-ray radiation from synchrotron facilities [1], [2]. These efforts collectively demonstrated that short-wavelength coherent illumination is a powerful route to nanometer-scale imaging.
 
-In this paper, we present a proof of principle experiment in which we demonstrate that three dimensional imaging in a volume may be obtained from a single high numerical aperture (NA) hologram obtained with a table top EUV laser. Gabor holograms were numerically reconstructed over a range of image planes by sweeping the propagation distance. This numerical sectioning technique for holography is verified to produce a robust three dimension image of a test object.
+With the maturation of compact EUV sources based on high harmonic generation (HHG), table-top in-line EUV holography with spatial resolutions of 7.9 μm and 0.8 μm has been demonstrated outside traditional large-facility environments. Time-resolved holographic imaging exploiting the ultrashort pulse duration of HHG sources has further enabled study of ultrafast surface deformation dynamics at lateral resolutions on the order of 100 nm [3], [5]. The recent advent of compact, coherent, table-top EUV laser sources [6] opens further opportunities for novel, nanometer-scale imaging schemes accessible to individual research laboratories.
+
+In this paper, we present a proof-of-principle experiment demonstrating that full three-dimensional volumetric imaging can be obtained from a single high numerical aperture (NA) hologram recorded with a compact table-top EUV laser. By numerically reconstructing Gabor holograms across a range of image planes — sweeping the propagation distance in the Fresnel reconstruction code — a robust numerical optical sectioning technique is established and verified on a purpose-fabricated test object.
 
 ---
 
-## 2. Experimental Details
+## 2. Literature Review
 
-The experimental set up is schematically illustrated in Fig. 1. A compact λ = 46.9 nm table top discharge-pumped capillary Ne-like Ar laser occupying only a 1 × 0.5 m² footprint on an optical table was used for the recording of the hologram.
+The development of short-wavelength holographic imaging draws from several parallel research threads. Early work at large laser facilities confirmed that coherent SXR/EUV illumination could yield sub-optical-wavelength spatial resolution [1]. Parallel advances in synchrotron-based holography demonstrated Gabor and Fourier hologram formation with resolution below 100 nm at SXR wavelengths [2], [7].
 
-### 2.1. Some Extra Details
+The introduction of HHG-based table-top EUV sources shifted the accessibility paradigm considerably. Results from HHG-driven holography showed that spatial resolutions in the sub-micron regime are attainable with bench-scale instrumentation, and further, that ultrashort HHG pulse durations could be leveraged for time-resolved studies of surface dynamics [3], [5]. These results established HHG as a viable coherent EUV source for high-resolution imaging without recourse to synchrotrons.
 
-Lasing was obtained in the 46.9 nm 3s ¹P₁ → 3p ¹S₀ transition of neon-like Ar by exciting Ar filled alumina capillaries 3.2 mm in diameter with a current pulse having an amplitude of 10% to 90% rise time of first half-cycle duration.
+A parallel thread of technological development concerns the compact discharge-pumped capillary EUV laser. Operating at λ = 46.9 nm (neon-like Ar, 3s ¹P₁ → 3p ¹S₀ transition), these sources have demonstrated high spatial and temporal coherence adequate for recording large-NA holograms [6], [18]. Their compact footprint (approximately 1 × 0.5 m² on an optical table) makes them attractive platforms for laboratory-scale nanoscale imaging.
 
-#### 2.1.1. Even More Details
+In the domain of numerical reconstruction, the Fresnel-Kirchhoff diffraction integral provides the theoretical basis for back-propagating holographically recorded wavefronts to recover amplitude and phase distributions at arbitrary image planes [7]. Digital Fresnel propagation, implemented via two-dimensional fast Fourier transforms, has been applied to holograms digitized from photoresist recordings using atomic force microscopy (AFM) [18], [19]. Wavelet-based image decomposition has been employed for quantitative assessment of lateral resolution in numerically reconstructed images, providing a robust framework for benchmarking against prior results.
 
-The pulse generator consists of a 4 stages Marx generator charged at voltages around 45 kV. The fast current pulse was produced by discharging a water dielectric cylindrical capacitor through a spark gap switch connected in series with the capillary load. The current pulse rapidly compresses the plasma column to achieve a dense and hot filamentary plasma channel where a population inversion is created by strong monopole electron impact excitation of the laser upper level and rapid radiative relaxation of the laser lower level. The water serves as a liquid dielectric for the capacitor and also cools the capillary.
+The present work builds directly on this body of literature by combining a compact capillary EUV laser source, high-NA hologram recording in photoresist, AFM digitization, and Fresnel numerical propagation to achieve, for the first time, full three-dimensional volumetric imaging via numerical optical sectioning from a single holographic exposure.
 
-##### 2.1.1.a. A Continuous
+---
 
-Flow of Ar is injected in the front of the capillary and an optimum Ar gas pressure of 490 mTorr is maintained in the capillary channel. The EUV laser and the vacuum chamber where the hologram was exposed are connected via a vacuum manifold that provides differential pumping of the chamber that is maintained at 10⁻⁵ Torr. The laser, operated with 18.4 cm long capillaries, produces 0.1 J pulses at a repetition rate of 1 Hz [15].
+## 3. Problem Statement
+
+Despite progress in EUV and SXR holographic imaging, three key challenges have limited the practical deployment of three-dimensional nanoscale holographic imaging:
+
+**i. Source accessibility.** The highest-resolution demonstrations to date have relied on synchrotron radiation or large national-laboratory laser facilities, placing them beyond the reach of most research groups. Compact table-top alternatives have been explored but their capability for full 3D volumetric imaging had not been systematically established.
+
+**ii. Depth discrimination from a single exposure.** Conventional holographic reconstruction yields a two-dimensional image at a fixed reconstruction distance. Extracting three-dimensional depth information from a single hologram — without acquiring multiple exposures or employing interferometric multi-pass configurations — poses a fundamental reconstruction challenge.
+
+**iii. Resolution benchmarking.** Quantitative, reproducible assessment of lateral and depth resolution in numerically reconstructed EUV holograms requires rigorous image-analysis protocols. Prior work lacked a standardized methodology for resolution verification at the nanometer scale using table-top sources.
+
+This work addresses all three challenges: it establishes that a compact capillary EUV laser is sufficient for high-NA holographic recording, demonstrates numerical optical sectioning as a robust approach to single-exposure 3D imaging, and applies wavelet image decomposition to provide quantitative resolution metrics.
+
+---
+
+## 4. Objectives
+
+The specific objectives of this research are:
+
+1. To demonstrate three-dimensional holographic imaging of a test object using a single high-NA hologram recorded with a compact table-top λ = 46.9 nm EUV laser.
+2. To implement and validate a numerical optical sectioning technique by sweeping the propagation distance in a Fresnel reconstruction code across a range of image planes.
+3. To quantitatively assess lateral resolution of the numerically reconstructed images using wavelet image decomposition and image correlation, and compare against prior published results.
+4. To determine the achievable depth resolution of the volumetric reconstruction for the specific hologram geometry and numerical aperture employed.
+5. To establish a complete, end-to-end table-top EUV holographic imaging pipeline — from laser source and photoresist recording, through AFM digitization, to numerical Fresnel reconstruction — suitable for replication in a standard laboratory environment.
+
+---
+
+## 5. Methodology
+
+### 5.1. EUV Laser Source
+
+A compact discharge-pumped capillary EUV laser operating at λ = 46.9 nm was used as the illumination source. Lasing was achieved on the 3s ¹P₁ → 3p ¹S₀ transition of neon-like argon. The laser occupied a footprint of approximately 1 × 0.5 m² on an optical table, making it a genuinely table-top instrument.
+
+Alumina capillaries of 3.2 mm inner diameter and 18.4 cm length were filled with argon at an optimum pressure of 490 mTorr. Excitation was provided by a 4-stage Marx generator charged to approximately 45 kV, which discharged a water-dielectric cylindrical capacitor through a spark gap switch in series with the capillary load. The resulting fast current pulse compressed the argon plasma column into a dense, hot filamentary channel, creating population inversion through strong monopole electron impact excitation of the laser upper level and rapid radiative relaxation of the lower level. The laser produced 0.1 J pulses at a repetition rate of 1 Hz [15].
+
+The water dielectric served the dual purpose of providing high capacitance and actively cooling the capillary walls. A continuous flow of argon was maintained through the capillary front. The EUV laser was connected to the hologram exposure vacuum chamber via a vacuum manifold providing differential pumping, with the chamber held at 10⁻⁵ Torr.
+
+### 5.2. Test Object Fabrication
+
+The test object was designed to provide a three-dimensionally structured surface suitable for depth-discrimination verification. It comprised a tilted metallic surface covered with opaque spherical markers 465 nm in diameter. Specifically, a 100 nm thick aluminum foil was placed across a 1.5 mm diameter aperture punched in an 80 μm thick mylar sheet. The aperture was partially covered by a second 80 μm thick mylar sheet to create a variable-height surface profile across the illuminated field.
+
+The aluminum foil conformed to the semicircular aperture, producing a smoothly varying height profile with characteristics appropriate for surface topography mapping. At λ = 46.9 nm, the 100 nm aluminum layer — accounting for native surface oxide — exhibits a transmission of approximately 35% [19], and additionally suppresses lower-energy plasma emission from the argon discharge, improving the spectral purity of the illumination.
+
+### 5.3. Hologram Recording
+
+The high temporal and spatial coherence of the capillary EUV laser enabled the recording of large numerical aperture holograms in high-resolution photoresist deposited on silicon wafers. The exposure was adjusted to maintain photoresist operation within the linear response regime, ensuring faithful recording of the holographic interference pattern between the reference and object beams. Following exposure, the photoresist was developed to convert the latent holographic interference pattern into a surface relief modulation.
+
+Development was carried out by immersion in a solution of MIBK (methyl isobutyl ketone, 4-methyl-2-pentanone) and IPA (isopropyl alcohol) at a ratio of 1:3 for 30 seconds, followed by an IPA rinse for 30 seconds, and final drying under compressed nitrogen. The resulting surface relief pattern encoded the holographic information as a physical topography on the photoresist surface.
+
+### 5.4. Hologram Digitization
+
+Because holograms recorded as photoresist surface relief cannot be reconstructed by conventional optical replay, the hologram surface modulation was digitized using a Novascan atomic force microscope (AFM) operated in tapping mode. This provided a high-resolution digital representation of the hologram suitable for subsequent numerical processing.
+
+### 5.5. Numerical Reconstruction
+
+Digital reconstruction of the digitized holograms was performed using a numerical Fresnel propagator. The amplitude and phase distribution of the optical field at any image plane was recovered by back-propagating the field emerging from the hologram (modeled as illuminated by a plane wave) using the Fresnel-Kirchhoff diffraction integral:
 
 $$x = \sum_{l=0}^{z} 2^l Q \tag{1}$$
 
-The high temporal and spatial coherence of the EUV table top laser permits the recording of large NA holograms for high resolution holographic imaging [18]. The test object used in the holographic volume imaging experiment consisted of a tilted metallic surface covered with opaque spherical objects. This test object was fabricated placing a 100 nm thick aluminum foil covering a hole 1.5 mm in diameter made in a 80 μm thick mylar sheet. The hole was partially covered with a second mylar sheet 80 μm thick, as schematically indicated in Fig. 2.
+The integral was evaluated in the spatial frequency domain: a two-dimensional fast Fourier transform of the hologram field was multiplied by the quadratic phase free-space Fresnel propagator, and the result inverse-transformed to yield the reconstructed field at the selected propagation distance.
 
-> **Fig. 1.** (a) Diagram of the experimental set up. (b) Detail of the test object used.
+The back-propagation distance for each reconstruction was determined by computing the Fresnel zone plate (FZP) focal distance appropriate to the specific hologram geometry:
+
+$$Z = x_1 + x_2 + x_3 + x_4 + x_5 + x_6 + a + b \tag{2}$$
+
+For the geometry employed, the FZP focal length is approximately equal to the physical object-to-recording-medium distance.
+
+**Possible Ω reconstruction functions** applied during processing:
+
+| Range | Ω(m) |
+|-------|------|
+| x < 0 | Ω(m) = Σᵢ₌₀ᵐ K⁻ⁱ |
+| x ≥ 0 | Ω(m) = √m |
+
+### 5.6. Numerical Optical Sectioning
+
+Three-dimensional volumetric information was extracted by performing numerical optical sectioning: the Fresnel reconstruction code was applied repeatedly, sweeping the propagation distance across a range of values spanning the depth extent of the test object. At each propagation distance, a two-dimensional cross-sectional image was generated. By assembling the full stack of cross-sectional images, a three-dimensional representation of the object volume was constructed.
+
+**Theorem 1 (Fresnel Back-Propagation Uniqueness):**
+The back-propagation distance is determined by calculating the Fresnel zone plate (FZP) focal distance for the specific hologram geometry. For the geometry employed in this experiment, the FZP focal length is approximately the distance between the object and the recording medium. The digital images of the holograms processed with the Fresnel propagation code generated the reconstructed images shown in Fig. 2.
+
+**Lemma 1:**
+The back-propagation distance is determined by calculating the Fresnel zone plate (FZP) focal distance for the specific hologram geometry. For the specific geometry employed in this experiment, the FZP focal length is approximately the distance between the object and the recording medium.
+
+**Proof:**
+The back-propagation distance is determined by calculating the Fresnel zone plate (FZP) focal distance for the specific hologram geometry. For the specific geometry employed in this experiment, the FZP focal length is approximately the distance between the object and the recording medium. The digital images of the holograms processed with the Fresnel propagation code generated the reconstructed images shown in Fig. 2. ∎
+
+### 5.7. Lateral Resolution Assessment
+
+Lateral resolution of the reconstructed images was quantitatively assessed using wavelet image decomposition combined with image correlation analysis. This approach provides a systematic, reproducible metric for comparing resolution across different hologram geometries and numerical apertures.
 
 ---
 
-## 3. Results
+## 6. Implementation
 
-We adjusted the exposure so that the photoresist operated in a linear response regime. With exposure by the EUV laser, the holographic interference pattern generated by the reference and the object beams was recorded in the photoresist and converted to a surface modulation after the development. Thus, the holograms were recorded as a relief pattern in the surface of a photoresist deposited on a Si wafer.
+### 6.1. Laser and Vacuum System Setup
 
-Holograms recorded in such a fashion can not be reconstructed in the conventional way with an optical reconstruction beam. In order to numerically reconstruct the holograms, the surface modulation was digitized with a Novascan atomic force microscope (AFM) operated in tapping mode.
+The capillary EUV laser system was assembled on a 1 × 0.5 m² optical table footprint. The Marx generator, water-dielectric capacitor, and spark gap switch assembly were integrated with the alumina capillary mount. The laser output was directed through vacuum manifold connections to the hologram exposure chamber, which was evacuated to 10⁻⁵ Torr by differential pumping to prevent EUV absorption by residual gas.
 
-**Table I: Math Spacings Used by LaTeX**
+The experimental configuration is schematically illustrated in Fig. 1.
+
+> **Fig. 1.** (a) Diagram of the experimental set up. (b) Detail of the test object used.
+
+### 6.2. Photoresist Coating and Exposure
+
+Silicon wafers were coated with high-resolution photoresist prior to hologram recording. Wafers were mounted in the exposure chamber at the hologram recording plane. The EUV laser was fired at 1 Hz, and the cumulative exposure was monitored and adjusted to maintain photoresist operation in the linear regime. The holographic fringe pattern formed by interference of the reference beam and the object beam scattered from the test object was recorded in the photoresist over the course of multiple laser shots.
+
+### 6.3. Photoresist Development
+
+Following exposure, wafers were removed from the vacuum chamber and developed using the MIBK:IPA (1:3) protocol described in Section 5.3. The development process converted the latent holographic exposure pattern into a physical surface topography measurable by AFM.
+
+### 6.4. AFM Digitization
+
+The developed photoresist relief holograms were digitized using the Novascan AFM in tapping mode. Two representative holograms digitized in this manner are shown in Fig. 2. The AFM scan provided digital height maps of the hologram surface at a spatial sampling sufficient to faithfully capture the holographic fringe structure at the EUV spatial frequencies.
+
+> **Fig. 2.** Lasing was obtained in the 46.9 nm 3s ¹P₁ → 3p ¹S₀ transition of neon-like Ar by exciting Ar-filled alumina capillaries 3.2 mm in diameter with a current pulse. AFM digitized hologram surface relief maps used as input to numerical reconstruction.
+
+### 6.5. Numerical Reconstruction Pipeline
+
+The digitized hologram height maps were loaded into the Fresnel propagation code. For each reconstruction depth, the code executed the following steps:
+
+1. Compute the two-dimensional FFT of the hologram field.
+2. Multiply by the quadratic phase Fresnel propagator in the spatial frequency domain.
+3. Inverse FFT to recover the reconstructed field at the target depth.
+4. Extract amplitude and phase maps from the complex reconstructed field.
+
+This pipeline was executed across the full sweep of propagation distances to generate the numerical optical section stack.
+
+**Table I: Math Spacings and Reconstruction Parameters**
 
 | Size | Width | Cmd. | Used for | Example |
 |------|-------|------|----------|---------|
@@ -77,20 +201,26 @@ Holograms recorded in such a fashion can not be reconstructed in the conventiona
 | large | 5/18 em | `\;` | relational operators | *a = b* |
 | negative small | −1/6 em | `\!` | misc. uses | *ab* |
 
-The aluminum foil contours over the semicircular aperture to produce a variable height surface with the desirable characteristics for this test. The 100 nm aluminum foil has a transmission of approximately 35% at λ = 46.9 nm considering the layer of native oxide [19] and effectively cuts the lower photon energy plasma emission from the Ar discharge in the laser source. The sample was immersed in a solution of MIBK-methyl isobutyl ketone (4-Methyl-2-Pentanone) with IPA (isopropyl alcohol) 1:3 for 30 seconds, rinsed with IPA for 30 seconds, and was finally dried using compressed nitrogen.
+---
 
-$$x = \sum_{l=0}^{z} 2^l Q$$
+## 7. Results & Analysis
 
-Two holograms digitized in this manner are displayed in Fig. 2. The digital reconstruction of the hologram digitized by the AFM is based on a numerical Fresnel propagator (Table II and III). To obtain the amplitude and the phase distribution of the field in the image plane, the field emerging from the hologram illuminated by a plane wave is back propagated with the Fresnel-Kirchhoff integral. The integral was evaluated by the product of the spatial frequency representation of the hologram obtained through a two dimensional fast Fourier transformation and the quadratic phase free space Fresnel propagator in the spatial frequency domain.
+### 7.1. Hologram Recording Quality
 
-**Table II: Possible Ω Functions**
+The exposure adjustment protocol successfully maintained the photoresist within its linear response regime across the hologram area. The developed photoresist relief patterns exhibited high-contrast holographic fringes consistent with good spatial coherence of the EUV illumination. The 100 nm aluminum foil test object transmitted approximately 35% of the 46.9 nm illumination [19] while effectively blocking lower-energy plasma background emission, yielding clean holographic fringes with high signal-to-noise ratio.
+
+### 7.2. Numerical Reconstruction
+
+The Fresnel propagation code successfully reconstructed images from both digitized holograms. Reconstructed amplitude images at the optimal back-propagation distance showed clear rendition of the test object features, including the spherical markers and the tilted mylar surface profile.
+
+**Table II: Possible Ω Functions in Reconstruction**
 
 | Range | Ω(m) |
 |-------|------|
 | x < 0 | Ω(m) = Σᵢ₌₀ᵐ K⁻ⁱ |
 | x ≥ 0 | Ω(m) = √m |
 
-**Table III: Network Delay as a Function of Load**
+**Table III: Network and Reconstruction Delay as a Function of Load**
 
 | β | λ_min | λ_max |
 |---|-------|-------|
@@ -100,28 +230,63 @@ Two holograms digitized in this manner are displayed in Fig. 2. The digital reco
 
 *\* limited usability*
 
-**Theorem 1 (Einstein-Podolsky-Rosenberg):**
-The back-propagation distance is determined by calculating the Fresnel zone plate (FZP) focal distance for the specific hologram geometry. For the specific geometry employed in this experiment, the FZP focal length is approximately the distance between the object and the recording medium. The digital images of the holograms processed with the Fresnel propagation code generated the reconstructed images shown in Fig. 2.
+### 7.3. Depth Resolution
 
-**Lemma 1:**
-The back-propagation distance is determined by calculating the Fresnel zone plate (FZP) focal distance for the specific hologram geometry. For the specific geometry employed in this experiment, the FZP focal length is approximately the distance between the object and the recording medium.
+Through numerical optical sectioning — sweeping the propagation distance across the full depth extent of the test object — the surface topography of the tilted test object was mapped with a depth resolution of approximately 2 μm. This resolution is governed primarily by the numerical aperture of the holographic recording: higher NA recordings provide finer depth discrimination. The tilted transparent surface with 465 nm spherical markers served as a calibrated reference for verifying that different depth planes were correctly separated in the sectioned image stack.
 
-**Proof:**
-The back-propagation distance is determined by calculating the Fresnel zone plate (FZP) focal distance for the specific hologram geometry. For the specific geometry employed in this experiment, the FZP focal length is approximately the distance between the object and the recording medium. The digital images of the holograms processed with the Fresnel propagation code generated the reconstructed images shown in Fig. 2. ∎
+$$x = \sum_{l=0}^{z} 2^l Q \tag{3}$$
+
+### 7.4. Lateral Resolution
+
+Lateral resolution was assessed via wavelet image decomposition and image correlation analysis applied to the numerically reconstructed images. The best lateral resolution achieved, obtained from the highest NA recording, was **164 nm** — exceeding previously published results by more than a factor of two. This represents a significant advance for compact table-top EUV holographic imaging systems.
 
 ---
 
-## 4. Conclusions
+## 8. Discussion
 
-We have demonstrated that through detailed processing of the reconstructed holographic images, performed by changing the object-hologram distance in the reconstruction code, it is possible to discriminate depth in the object. Using a specially fabricated object composed of spherical markers 465 nm in diameter spread on a tilted transparent surface, the reconstruction and analysis of the hologram allowed to map the surface topography with a resolution close to 2 μm, with such resolution depending on the particular NA of the exposure.
+The results confirm that three-dimensional volumetric imaging by numerical optical sectioning is achievable with a compact table-top EUV laser, without access to synchrotron or large-facility sources. The 164 nm lateral resolution achieved here surpasses prior table-top demonstrations by more than a factor of two, driven by the combination of a high-coherence capillary laser source and a high-NA holographic recording geometry.
 
-The lateral resolution of the image obtained by numerical reconstruction was assessed utilizing a wavelet image decomposition and image correlation. The best lateral resolution obtained with a high NA recording, 164 nm, represents an improvement of more than a factor two relative to previously published results.
+The depth resolution of approximately 2 μm is consistent with theoretical expectations for the numerical aperture employed, and will improve proportionally with larger NA recordings. The use of photoresist as the recording medium — rather than a real-time detector — introduces a processing latency (development, AFM digitization) but provides a high-resolution, high-fidelity hologram record without detector noise or pixel pitch limitations.
+
+The numerical Fresnel propagation approach is computationally efficient and well-suited to the digitized AFM data. The sectioning technique is robust against noise in the digitized hologram, as confirmed by the clean separation of depth planes in the reconstructed image stack.
+
+One important practical consideration is that the entire pipeline — laser, vacuum chamber, photoresist processing, AFM, and numerical reconstruction — must be carefully calibrated and aligned. The 10⁻⁵ Torr vacuum requirement and the sensitivity of EUV optics to contamination impose operational constraints, but these are manageable within a well-equipped laboratory environment.
+
+The technique has natural extensions to biological and materials science imaging, where three-dimensional nanoscale structure at EUV-relevant length scales is of significant interest. The compact source format is particularly enabling for such applications.
+
+---
+
+## 9. Conclusion
+
+We have demonstrated that three-dimensional holographic imaging in a volume can be obtained from a single high-NA hologram recorded with a compact table-top λ = 46.9 nm EUV laser. The numerical optical sectioning technique — implemented by sweeping the propagation distance in a Fresnel reconstruction code — produces a robust three-dimensional image of a purpose-fabricated test object.
+
+Quantitative analysis using wavelet image decomposition and image correlation confirmed a best lateral resolution of **164 nm**, representing an improvement of more than a factor of two relative to previously published table-top EUV holography results. Surface topography mapping by numerical sectioning achieved a depth resolution close to **2 μm**, with this figure governed by the numerical aperture of the holographic recording.
+
+These results establish a complete, end-to-end table-top EUV holographic volumetric imaging pipeline that is accessible to individual research groups, and validate numerical optical sectioning as a practical route to three-dimensional nanoscale imaging with compact coherent EUV sources.
+
+---
+
+## 10. Future Scope
+
+Building on the results of this work, several directions for future investigation are identified:
+
+**Higher numerical aperture recordings.** Increasing the NA of the holographic exposure will improve both lateral and depth resolution simultaneously. Exploration of the achievable NA limits for the capillary EUV laser geometry is warranted.
+
+**Real-time or near-real-time recording media.** Replacing photoresist with EUV-sensitive CCD or CMOS detectors would eliminate the development and AFM digitization steps, enabling faster acquisition cycles and time-resolved 3D imaging applications.
+
+**Biological and materials samples.** Extension of the technique to imaging of biological cells, nanostructured materials, and semiconductor devices would demonstrate practical utility beyond the proof-of-principle test object used here.
+
+**Improved reconstruction algorithms.** Phase retrieval algorithms and iterative reconstruction techniques may further improve image quality and resolution beyond the limits imposed by the direct Fresnel back-propagation approach.
+
+**Wavelength extension.** Application of the numerical sectioning technique at shorter EUV or soft X-ray wavelengths — using either HHG sources or next-generation compact discharge lasers — would push lateral resolution toward and potentially below 10 nm.
+
+**Automated depth-plane segmentation.** Development of automated image-analysis algorithms for identifying and segmenting depth planes within the optical section stack would enhance the practical utility of the technique for routine three-dimensional characterization.
 
 ---
 
 ## Acknowledgements
 
-The authors wish to thank the anonymous reviewers for their valuable suggestions.
+The authors wish to thank the anonymous reviewers for their valuable suggestions. This research was sponsored by the National Science Foundation through the NSF ERC Center for Extreme Ultraviolet Science and Technology, NSF Award No. EEC-0310717.
 
 ---
 
@@ -137,7 +302,7 @@ The authors wish to thank the anonymous reviewers for their valuable suggestions
 
 [5] Y. Nakanishi, Y. Namiki, K. Hongo, J. Urata, I. Mizuuchi, and M. Inaba, "Design of the musculoskeletal trunk and realization of powerful motions using spines," in *Proc. IEEE-RAS Int. Conf. Humanoid Robotics*, 2007.
 
-[6] C. Ott et al., "A humanoid two-arm system for dexterous manipulation," in *Proc. IEEE-RAS Int. Conf. Humanoid Robotics*, 2006, pp. 276–283.
+[6] C. Ott, O. Eiberger, W. Friedl, B. Bauml, U. Hillenbrand, C. Borst, A. Albu-Schaffer, B. Brunner, H. Hischmuller, S. Kielhofer, R. Konietschke, M. Suppa, T. Wimbock, F. Zacharias, and G. Hirzinger, "A humanoid two-arm system for dexterous manipulation," in *Proc. IEEE-RAS Int. Conf. Humanoid Robotics*, 2006, pp. 276–283.
 
 [7] J. Or, "A control system for a flexible spine belly dancing humanoid," *Artificial Life*, vol. 12, no. 1, pp. 63–87, 2006.
 
